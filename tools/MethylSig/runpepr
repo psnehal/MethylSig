@@ -1,0 +1,32 @@
+python /usr/lib/python2.6/site-packages/PePr/PePr.py -i /home/snehal/DataFiles/PepR/input_rep1.bed, /home/snehal/DataFiles/PepR/input_rep2.bed -c /home/snehal/DataFiles/PepR/chip_rep1.bed, /home/snehal/DataFiles/PepR/chip_rep2.bed -n  check -f bed --peaktype sharp --remove_artefacts
+
+ python /usr/lib/python2.6/site-packages/PePr/PePr.py -i /home/snehal/galaxy-dist/database/files/000/dataset_85.dat /home/snehal/galaxy-dist/database/files/000/dataset_85.dat    -c  /home/snehal/galaxy-dist/database/files/000/dataset_85.dat /home/snehal/galaxy-dist/database/files/000/dataset_85.dat -n check -f bed --peaktypesharp --remove_artefacts
+
+
+
+for line in infile:
+    line = line.strip().split()
+    chr=line[0]
+    strand = line[5]
+    if strand == '+':
+        pos = int(line[1])  # genomic position
+        try: data_dict[chr][filename]['f'].append(pos)
+        except KeyError:
+            if chr not in data_dict:
+                data_dict[chr] = {}
+            data_dict[chr][filename] = {}
+            data_dict[chr][filename]['f'] =[pos]
+            data_dict[chr][filename]['r'] =[]
+    elif strand == '-':
+        pos = int(line[2])-1
+        try: data_dict[chr][filename]['r'].append(pos)
+        except KeyError:
+            if chr not in data_dict:
+                data_dict[chr] = {}
+            data_dict[chr][filename] = {}
+            data_dict[chr][filename]['f'] =[]
+            data_dict[chr][filename]['r'] =[pos]
+    else:
+        print("strand error")
+infile.close()
+

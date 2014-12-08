@@ -1,0 +1,76 @@
+<tool id="fa_gc_content_2" name="MethylSig Read Data ">
+  <description>for each sequence in a file</description>
+ 	<macros>
+      
+        <import>methylsig_macros.xml</import>
+    </macros>
+    <command interpreter="python">
+	
+        test.py
+	 #for $i, $s in enumerate( $input_files )
+	    --o "$i"
+	    --i_file ${s.input.file_name}+""
+            --s_id ${s.sampleid}
+	    --data ${s.datatype}
+	#end for
+	    --assem ${assembly}
+	    --destrand ${destrand}
+            --numcor ${numcores}
+            --cont ${context}
+     	
+	</command>
+      <inputs>
+	<param name="groupa" size="30" type="text" value="GroupA" label="Enter group A name" display="radio"/>
+	<param name="groupb" size="30" type="text" value="GroupB" label="enter group b name" display="radio"/>
+	 <param format="tabular" name="input1" type="data" label="Select data" help="Dataset missing? See TIP below."/>
+	
+	 <repeat name="input_files" title="Input files" min="2">
+             <param name="input" type="data" format="tabular" label="Dataset"/>
+            <param name="sampleid" type="text" size="30" optional="true" value=""
+                label="Sample id/Name of the sample"
+                help="Label to use in the output. If not given the dataset name will be used instead."/>	
+	<param name="datatype" type="select" label="Data Type">
+		<option value="1" selected="true">Whole Genome bisulfite sequencing</option>	 
+		<option value="0">Reduced representation bisulfite sequencing(RRBS)</option>
+	</param>
+	<param name="group" type="select" label="Group">
+		<option value="1" selected="true">GroupA</option>	 
+		<option value="0">GroupB</option>
+	</param>
+          </repeat>
+	<param name="assembly" type="select" label="Reference genome version">
+	    <option value="hg18" selected="true">Human(hg18)</option>
+	    <option value="hg19">Human(hg19)</option>
+	    <option value="mm9">Mouse(mm9)</option>
+	    <option value="mm10">Mouse(mm10)</option>
+	    <option value="rn4">Rat(rn4)</option>
+	</param>
+	<param name="destrand" type="select" label="Destranded?">
+	    <option value="true" selected="true">True</option>	 
+	    <option value="false">False</option>
+	</param>
+	<param name="numcores" size="30" type="integer" value="2" label="Number of cores" display="radio"/>
+	<param name="context" type="select" label="Context">
+	    <option value="5mcCpG" selected="true">5mc CpG</option>
+	    <option value="5hmCCpG">5hmC CpG</option>
+	    <option value="5mCCpH">5mC CpH</option>	  
+	</param>
+	
+         
+       </inputs>
+       <outputs>
+                  <data format="tabular" name="output" />
+        </outputs>
+
+  <tests>
+      <test>
+      <output name="out_file1" file="test.pdf"/>
+      </test>
+                        </tests>
+
+  <help>
+  This function is to read CpG methylation score files and convert these files into a ‘methylSigData’ object for further analysis and annotation.
+  meth = methylSigReadData(fileList, sample.ids = sample.id, assembly = "hg18", treatment = treatment, context = "CpG", destranded=TRUE)
+    </help>
+
+</tool>

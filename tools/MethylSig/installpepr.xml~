@@ -1,0 +1,8 @@
+<tool id="installpepr" name="Install PePr">
+  <description>ChIP-Seq Peak-calling and Prioritization pipeline (PePr)
+</description>
+  <command interpreter="bash">R CMD INSTALL methylSig_0.1.0.tar.gz</command>
+  <help>
+Use this function only to install software for the first time.
+</help>
+</tool>

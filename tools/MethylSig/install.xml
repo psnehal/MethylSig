@@ -1,0 +1,10 @@
+<tool id="installmethyl" name="Install MethylSig">
+  <description>whole genome DNA methylation analysis
+</description>
+  <command interpreter="python">
+getcwd()
+</command>
+  <help>
+Use this function only to install software for the first time.
+</help>
+</tool>
