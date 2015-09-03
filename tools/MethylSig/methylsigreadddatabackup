@@ -1,0 +1,72 @@
+<tool id="installpepr" name="Install PePr">
+  <description>ChIP-Seq Peak-calling and Prioritization pipeline (PePr)
+</description>
+  <command interpreter="python">installpepr.py</command>
+  <help>
+Use this function only to install software for the first time.
+</help>
+</tool>
+
+
+    test.py
+	 #for $i, $s in enumerate( $input_files )
+	    --o "$i"
+	    --i_file ${s.input.file_name}+""
+            --s_id ${s.sampleid}
+	    --data ${s.datatype}
+	#end for
+	    --assem ${assembly}
+	    --destrand ${destrand}
+            --numcor ${numcores}
+            --cont ${context}
+
+#if str(${i}+"").strip() != "":
+		  -a ${i}
+	       #end if
+	       #if str(${s.input.file_name}+"").strip() != "":
+		  --inputfile1= ${s.input.file_name}+""
+	       #end if	      
+		  -b ${s.sampleid}
+		  --datatype= ${s.datatype}	      
+		  --avar ${assembly}
+	    	  --destrand ${destrand}
+                  --numcor ${numcores}
+                  --cont ${context}
+
+library("optparse")
+
+option_list <- list()
+
+option_list$o <- make_option('--o', type='character')
+option_list$inputfile <- make_option('--inputfile', type='character')
+option_list$sample_id <- make_option('--sample_id', type='character')
+option_list$datatype <- make_option('--datatype', type='character')
+option_list$assem <- make_option('--assem', type='character')
+option_list$destrand <- make_option('--destrand', type='character')
+option_list$numcor <- make_option('--numcor', type='character')
+cat(sprintf('select * where contract_date > "%s"\n', option_list$numcor)
+option_list$cont <- make_option('--cont', type='character')
+print 4
+opt <- parse_args(OptionParser(option_list=option_list))
+
+
+library(RGalaxy)
+
+## function body not needed here, it is in package
+
+params <- list()
+print 5
+for(param in names(opt))
+{
+    if (!param == "help")
+        params[param] <- opt[param]
+	print params[param]
+}
+print 6
+do.call(functionToGalaxify, params)
+print 7
+## end warning handler
+}, warning = function(w) {
+    cat(paste("Warning:", conditionMessage(w), "\n"))
+    invokeRestart("muffleWarning")
+

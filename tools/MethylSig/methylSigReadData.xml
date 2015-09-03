@@ -4,25 +4,26 @@
       
         <import>methylsig_macros.xml</import>
     </macros>
-    <command interpreter="python">
-	
-        test.py
-	 #for $i, $s in enumerate( $input_files )
-	    --o "$i"
-	    --i_file ${s.input.file_name}+""
-            --s_id ${s.sampleid}
-	    --data ${s.datatype}
-	#end for
-	    --assem ${assembly}
-	    --destrand ${destrand}
-            --numcor ${numcores}
-            --cont ${context}
-     	
+  	<command interpreter="Rscript --vanilla  --verbose">methylTest.R "
+						      
+		   -a ${assembly};
+	    	   -d ${destrand};
+                   -n ${numcores};
+                   -c ${context};
+		  
+	 	#for $i, $s in enumerate( $input_files )
+		    -i ${s.input.file_name};
+		    -s ${s.sampleid};
+		    -t ${s.datatype};
+		#end for
+"
 	</command>
+     	
+	
       <inputs>
 	<param name="groupa" size="30" type="text" value="GroupA" label="Enter group A name" display="radio"/>
 	<param name="groupb" size="30" type="text" value="GroupB" label="enter group b name" display="radio"/>
-	 <param format="tabular" name="input1" type="data" label="Select data" help="Dataset missing? See TIP below."/>
+	
 	
 	 <repeat name="input_files" title="Input files" min="2">
              <param name="input" type="data" format="tabular" label="Dataset"/>
@@ -60,13 +61,12 @@
        </inputs>
        <outputs>
                   <data format="tabular" name="output" />
+		  <data format="tabular" name="methylSig" label="methylSig_${destrand}" />
+		  <data format="bed" name="PePr_parameters" label="${expName}_PePr_parameters.txt" />		
+
         </outputs>
 
-  <tests>
-      <test>
-      <output name="out_file1" file="test.pdf"/>
-      </test>
-                        </tests>
+
 
   <help>
   This function is to read CpG methylation score files and convert these files into a ‘methylSigData’ object for further analysis and annotation.

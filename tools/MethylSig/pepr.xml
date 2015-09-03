@@ -3,27 +3,29 @@
     <macros>      
         <import>methylsig_macros.xml</import>
     </macros>
-  <command interpreter="python"> 
-    runpepr.py
+  <command interpreter="python">
+	runpepr_Mac.py
 	 #for $i, $s in enumerate( $input_files )
 	    --o "$i"
 	    --i ${s.input.file_name}
 	    --c ${s.chip.file_name}   
-	#end for
+	#end for	
 	   --expName ${expName}
            --format ${format}
 	   --peakType ${peaktype}
            --thresh ${t}
 	   --removeArt ${remove_artefacts}
 	   --rd_dup ${remove_duplicate}
+	   --diff ${diff}
+	   --o1 ${PePr_peaks}
+           --o2 ${PePr_filtered_peaks}
+           --o3 ${PePr_parameters}
+	   --o4 ${PePr_peaks_diff}
 
-
-		
 	
-     	  	  
-  </command>
+           </command>
   <inputs>
-    <repeat name="input_files" title="Input files" min="2">
+     <repeat name="input_files" title="Input files" min="2">
             <param name="input" type="data" 
                 label="input file" format="bed"
                 help=""/>
@@ -39,22 +41,33 @@
       <option value="true">True</option>
       <option value="false">False</option>
     </param>    
-	<param name="remove_duplicate" type="select" label="Remove_duplicate" help="redundant reads greater than the expected maximum (determined by a binomial test) at each single location will be removed." >
+    <param name="remove_duplicate" type="select" label="Remove_duplicate" help="redundant reads greater than the expected maximum (determined by a binomial test) at each single location will be removed." >
       <option value="true">True</option>
       <option value="false">False</option>
     </param>  
+ <param name="diff" type="select" label="diff" help="Whether to perform differential binding analysis. If so, please provide chip2 and input2 samples as well. " >
+      <option value="true">True</option>
+      <option value="false">False</option>
+   </param> 
   </inputs>
   <outputs>
-    <data format="bed" name="out_file1" />
+	<data format="bed" name="PePr_peaks" label="${expName}_PePr_peaks.bed" />
+	<data format="bed" name="PePr_peaks_diff" label="${expName}_up.down_PePr_peaks.bed">
+		 <filter>diff == "true"</filter>
+	</data>
+	<data format="bed" name="PePr_filtered_peaks"  label="${expName}_PePr_filtered_peaks.txt">
+	 <filter>remove_artefacts == "true"</filter>	
+        </data>
+	<data format="bed" name="PePr_parameters" label="${expName}_PePr_parameters.txt" />		
   </outputs>
-  <tests>
+
+   <configfiles>
+	<configfile name="options_file">&lt;%import simplejson%&gt;			
+	</configfile>
+	</configfiles>
+   <tests>
     <test>
-      <param name="chrom" value="chr7"/>
-      <param name="start" value="100"/>
-      <param name="end" value="1000"/>
-      <param name="name" value="myinterval"/>
-      <param name="strand" value="plus"/>
-      <output name="out_file1" file="eq-createinterval.dat"/>
+     
     </test>
   </tests>
   <help>

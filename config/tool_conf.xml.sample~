@@ -29,14 +29,14 @@
     <tool file="validation/fix_errors.xml" />
   </section>
    <section name="MethylSig" id="mtools">
-    <tool file="MethylSig/installpepr.xml" />
-     <tool file="MethylSig/install.xml" />
-     <tool file="MethylSig/pepr.xml" />
-    <tool file="MethylSig/methylSigReadData.xml" />
-    <tool file="MethylSig/toolExample.xml" />
-    
+	<tool file="MethylSig/installpepr.xml" />
+	<tool file="MethylSig/install.xml" />
+	<tool file="MethylSig/pepr.xml" />
+	<tool file="MethylSig/methylSigReadData.xml" />
+	<tool file="MethylSig/addTwoNumbers.xml" /> 
+	<tool file="MethylSig/functionToGalaxify.xml" />
+  
   </section>
- <!--
   <section id="send" name="Send Data">
     <tool file="genomespace/genomespace_exporter.xml" />
   </section>
@@ -152,7 +152,7 @@
     
     <label id="fastx_toolkit" text="FASTX-Toolkit for FASTQ data" />
   </section>
--->
+
   <!--
   Keep this section commented until it includes tools that
   will be hosted on test/main.  The velvet wrappers have been
@@ -164,7 +164,7 @@
   <tool file="sr_assembly/velveth.xml" />
   </section>
   -->
- <!--
+
   <section id="solexa_tools" name="NGS: Mapping">
     <tool file="sr_mapping/bfast_wrapper.xml" />
     <tool file="sr_mapping/PerM.xml" />
@@ -194,6 +194,6 @@
     <tool file="phenotype_association/lps.xml" />
     <tool file="phenotype_association/master2pg.xml" />
   </section>
--->
+
 
 </toolbox>

@@ -29,14 +29,12 @@
     <tool file="validation/fix_errors.xml" />
   </section>
    <section name="MethylSig" id="mtools">
-    <tool file="MethylSig/installpepr.xml" />
-     <tool file="MethylSig/install.xml" />
-     <tool file="MethylSig/pepr.xml" />
-    <tool file="MethylSig/methylSigReadData.xml" />
-    <tool file="MethylSig/toolExample.xml" />
-    
+	<tool file="MethylSig/installpepr.xml" />
+	<tool file="MethylSig/install.xml" />
+	<tool file="MethylSig/pepr.xml" />
+	<tool file="MethylSig/methylSigReadData.xml" />
+	<tool file="MethylSig/functionToGalaxify.xml" />  
   </section>
-
   <section id="send" name="Send Data">
     <tool file="genomespace/genomespace_exporter.xml" />
   </section>

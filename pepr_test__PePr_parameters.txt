@@ -1,0 +1,15 @@
+chip1	['/home/snehal/galaxy-dist/database/files/000/dataset_1.dat', '/home/snehal/galaxy-dist/database/files/000/dataset_2.dat']
+chip2	['']
+difftest	False
+file_format	bed
+input1	['/home/snehal/galaxy-dist/database/files/000/dataset_3.dat', '/home/snehal/galaxy-dist/database/files/000/dataset_4.dat']
+input2	['']
+name	pepr_test
+narrow_peak_width	False
+peaktype	sharp
+remove_artefacts	True
+remove_redundant	False
+shift_size	-1
+threshold	1e-05
+unsave_log	False
+window_size	310

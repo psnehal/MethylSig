@@ -1,0 +1,5 @@
+galaxy("addTwoNumbers",
+    galaxyConfig=
+      GalaxyConfig(galaxyHome, "mytool", "Test Section",
+        "testSectionId")
+    )

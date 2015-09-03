@@ -1,0 +1,38 @@
+INFO     03:54:48 # begin parsing files...
+INFO     03:54:48 # retrieving reads from file: /home/snehal/galaxy-dist/database/files/000/dataset_69.dat
+INFO     03:54:48 # retrieving reads from file: /home/snehal/galaxy-dist/database/files/000/dataset_70.dat
+INFO     03:54:48 # retrieving reads from file: /home/snehal/galaxy-dist/database/files/000/dataset_67.dat
+INFO     03:54:48 # retrieving reads from file: /home/snehal/galaxy-dist/database/files/000/dataset_68.dat
+INFO     03:54:48 # Total #reads for /home/snehal/galaxy-dist/database/files/000/dataset_69.dat is 25256
+INFO     03:54:48 # Total #reads for /home/snehal/galaxy-dist/database/files/000/dataset_70.dat is 41757
+INFO     03:54:48 # Total #reads for /home/snehal/galaxy-dist/database/files/000/dataset_67.dat is 30274
+INFO     03:54:48 # Total #reads for /home/snehal/galaxy-dist/database/files/000/dataset_68.dat is 26214
+DEBUG    03:54:48 # The genome size is 9999956
+INFO     03:54:48 # leaving file_parser.py
+INFO     03:54:48 # begin estimating the shift size...
+INFO     03:54:48 # estimating for /home/snehal/galaxy-dist/database/files/000/dataset_69.dat
+INFO     03:54:49 # chr10      64
+INFO     03:54:49 # /home/snehal/galaxy-dist/database/files/000/dataset_69.dat 64
+INFO     03:54:49 # estimating for /home/snehal/galaxy-dist/database/files/000/dataset_70.dat
+INFO     03:54:50 # chr10      38
+INFO     03:54:50 # /home/snehal/galaxy-dist/database/files/000/dataset_70.dat 38
+DEBUG    03:54:50 # shifting the reads for chr10...
+DEBUG    03:54:51 # The scaling factor for /home/snehal/galaxy-dist/database/files/000/dataset_67.dat is 1.15957010878
+DEBUG    03:54:51 # The scaling factor for /home/snehal/galaxy-dist/database/files/000/dataset_68.dat is 1.34939040551
+DEBUG    03:54:51 # The TMM estiamted from top 1000 windows is 1.27247749011
+DEBUG    03:54:51 # The scaling factor for /home/snehal/galaxy-dist/database/files/000/dataset_69.dat is 1.27247749011
+DEBUG    03:54:51 # The TMM estiamted from top 1000 windows is 0.824913282693
+DEBUG    03:54:51 # The scaling factor for /home/snehal/galaxy-dist/database/files/000/dataset_70.dat is 0.824913282693
+INFO     03:54:51 # begin window_size calculation...
+DEBUG    03:54:51 # chr10      310
+DEBUG    03:54:51 # length of windowsize list is 1
+DEBUG    03:54:51 # window_size:        310
+INFO     03:54:51 # finishing window size calculation...
+INFO     03:54:51 #  The windowSize is 310
+INFO     03:54:51 # partitioning by window on 	chr10...
+DEBUG    03:54:52 # there are 15 candidate windows for chr10
+DEBUG    03:54:52 # finished estimating dispersion for chr10
+DEBUG    03:54:52 # begin estimating fdr
+DEBUG    03:54:52 # finished estimating fdr
+INFO     03:54:52 # Merging adjacent significant windows...
+INFO     03:54:52 # begin post-processing...

@@ -1,3 +1,74 @@
 <?xml version="1.0"?>
 <toolbox tool_path="../shed_tools">
+<section id="mtools" name="MethylSig" version="">
+  <tool file="toolshed.g2.bx.psu.edu/repos/janislaw/fastqdump/4c5d50211c3d/fastqdump/fastqdump.xml" guid="toolshed.g2.bx.psu.edu/repos/janislaw/fastqdump/fastqdump/1.0.0">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>fastqdump</repository_name>
+        <repository_owner>janislaw</repository_owner>
+        <installed_changeset_revision>4c5d50211c3d</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/janislaw/fastqdump/fastqdump/1.0.0</id>
+        <version>1.0.0</version>
+    </tool>
+</section>
+
+<section id="mtools" name="MethylSig" version="">
+  <tool file="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/8c650f7f76e9/fastqc/rgFastQC.xml" guid="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.63">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>fastqc</repository_name>
+        <repository_owner>devteam</repository_owner>
+        <installed_changeset_revision>8c650f7f76e9</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.63</id>
+        <version>0.63</version>
+    </tool>
+</section>
+
+<section id="mtools" name="MethylSig" version="">
+  <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/bismark/0f8646f22b8d/bismark/bismark_bowtie2_wrapper.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/bismark/bismark_bowtie2/0.10.2">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>bismark</repository_name>
+        <repository_owner>bgruening</repository_owner>
+        <installed_changeset_revision>0f8646f22b8d</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/bgruening/bismark/bismark_bowtie2/0.10.2</id>
+        <version>0.10.2</version>
+    </tool>
+    <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/bismark/0f8646f22b8d/bismark/bismark_bowtie_wrapper.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/bismark/bismark_bowtie/0.10.2">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>bismark</repository_name>
+        <repository_owner>bgruening</repository_owner>
+        <installed_changeset_revision>0f8646f22b8d</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/bgruening/bismark/bismark_bowtie/0.10.2</id>
+        <version>0.10.2</version>
+    </tool>
+    <tool file="toolshed.g2.bx.psu.edu/repos/bgruening/bismark/0f8646f22b8d/bismark/bismark_methylation_extractor.xml" guid="toolshed.g2.bx.psu.edu/repos/bgruening/bismark/bismark_methylation_extractor/0.10.2">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>bismark</repository_name>
+        <repository_owner>bgruening</repository_owner>
+        <installed_changeset_revision>0f8646f22b8d</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/bgruening/bismark/bismark_methylation_extractor/0.10.2</id>
+        <version>0.10.2</version>
+    </tool>
+</section>
+
+<section id="mtools" name="MethylSig" version="">
+  <tool file="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/01d94df2e32a/cutadapt/cutadapt.xml" guid="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.6">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>cutadapt</repository_name>
+        <repository_owner>lparsons</repository_owner>
+        <installed_changeset_revision>01d94df2e32a</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.6</id>
+        <version>1.6</version>
+    </tool>
+</section>
+
+<section id="mtools" name="MethylSig" version="">
+  <tool file="toolshed.g2.bx.psu.edu/repos/iuc/fastqc/2611a96c30b7/fastqc/rgFastQC.xml" guid="toolshed.g2.bx.psu.edu/repos/iuc/fastqc/fastqc/0.53">
+      <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+        <repository_name>fastqc</repository_name>
+        <repository_owner>iuc</repository_owner>
+        <installed_changeset_revision>2611a96c30b7</installed_changeset_revision>
+        <id>toolshed.g2.bx.psu.edu/repos/iuc/fastqc/fastqc/0.53</id>
+        <version>0.53</version>
+    </tool>
+</section>
+
 </toolbox>

@@ -1,5 +1,15 @@
-cars <- c(1, 3, 6, 4, 9)
-pdf("/home/snehal/galaxy-dist/tools/MethylSig/test.pdf")
-plot(cars)
-dev.off()
+library(RGalaxy)
+addTwoNumbers <-
+function(
+        number1=GalaxyNumericParam(required=TRUE),
+        number2=GalaxyNumericParam(required=TRUE),
+        sum=GalaxyOutput("sum", "txt"))
+{
+    cat(number1 + number2, file=sum)
+}
 
+t <- tempfile()
+addTwoNumbers(2, 2, t)
+readLines(t, warn=FALSE)
+}
+print t

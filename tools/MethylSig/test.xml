@@ -1,0 +1,23 @@
+<tool id="test" name="test">
+  <description>ChIP-Seq Peak-calling and Prioritization pipeline (PePr)
+</description>
+<command interpreter="python">
+setwd(path.expand("/home/snehal/galaxy-dist/tools/MethylSig"))
+library(RGalaxy)
+
+(galaxy(addTwoNumbers,
+manpage=”/home/snehal/galaxy-dist/tools/MethylSig/test.Rd”,
+version=”0.1″,
+name=”Add two numbers”,
+galaxyConfig=GalaxyConfig(galaxyHome=path.expand(“~/galaxy-dist”),toolDir=”tools/MethylSig”,sectionName=”Haotu”,sectionId=”HaotuId”)
+))
+
+
+
+
+
+</command>
+  <help>
+Use this function only to install software for the first time.
+</help>
+</tool>
